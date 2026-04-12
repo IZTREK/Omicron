@@ -1,0 +1,47 @@
+﻿@page
+@model Usuarios.Pages.BiomasModel
+@{
+    ViewData["Title"] = "Biomas";
+}
+<div class="minecraft-container mt-4">
+    <h1 class="minecraft-title">Biomas de Minecraft</h1>
+    
+    <div style="text-align: left; margin-bottom: 20px;">
+        <a href="/" class="mc-btn" style="text-decoration: none; padding: 10px 20px; font-size: 1.1rem; display: inline-block;">
+            ← Volver al Inicio
+        </a>
+</div>
+
+
+<div class="minecraft-container mt-4">
+    <div class="minecraft-panel mt-3">
+        <h3>Exploración y Entornos</h3>
+        <p>Los mobs aparecen dependiendo del bioma en el que te encuentres. Algunos biomas clave son:</p>
+        <ul>
+            <li><strong>Llanuras (Plains):</strong> Ideal para encontrar animales pasivos como vacas, ovejas y caballos.</li>
+            <li><strong>Desierto (Desert):</strong> Cuidado en la noche, los Husks (Zombies del desierto) no se queman con el sol.</li>
+            <li><strong>El Nether:</strong> Un ecosistema hostil lleno de lava donde habitan los Piglins, Ghasts y Blazes.</li>
+        </ul>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: center; gap: 30px; margin-top: 30px; flex-wrap: wrap;">
+
+    <div style="background-color: #8b8b8b; border: 4px solid; border-color: #373737 #ffffff #ffffff #373737; padding: 20px 15px; text-align: center; width: 220px; box-shadow: inset 0 0 15px rgba(0,0,0,0.3);">
+        <img src="/images/llanuras.jpg" alt="Llanuras" style="width: 100%; height: 130px; object-fit: cover; border: 3px solid #555; margin-bottom: 15px;" />
+        <p style="margin: 0; color: black; font-weight: bold; text-shadow: none; font-size: 1.3rem;">Llanuras</p>
+    </div>
+
+    <div style="background-color: #8b8b8b; border: 4px solid; border-color: #373737 #ffffff #ffffff #373737; padding: 20px 15px; text-align: center; width: 220px; box-shadow: inset 0 0 15px rgba(0,0,0,0.3);">
+        <img src="/images/desierto.jpg" alt="Desierto" style="width: 100%; height: 130px; object-fit: cover; border: 3px solid #555; margin-bottom: 15px;" />
+        <p style="margin: 0; color: black; font-weight: bold; text-shadow: none; font-size: 1.3rem;">Desierto</p>
+    </div>
+
+    <div style="background-color: #8b8b8b; border: 4px solid; border-color: #373737 #ffffff #ffffff #373737; padding: 20px 15px; text-align: center; width: 220px; box-shadow: inset 0 0 15px rgba(0,0,0,0.3);">
+        <img src="/images/nether.jpg" alt="El Nether" style="width: 100%; height: 130px; object-fit: cover; border: 3px solid #555; margin-bottom: 15px;" />
+        <p style="margin: 0; color: black; font-weight: bold; text-shadow: none; font-size: 1.3rem;">El Nether</p>
+    </div>
+
+</div>
+</div>
+</div>

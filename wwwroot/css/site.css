@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background: url('https://i.pinimg.com/736x/b5/90/d1/b590d11903d870489f2259b67d56178d.jpg');
+    font-family: 'Press Start 2P', monospace;
+    color: #fff;
+    margin: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #2d2d2d;
+    border-bottom: 4px solid #1b5e20;
+}
+
+    .navbar a {
+        color: #fff !important;
+        font-size: 12px;
+    }
+    
+/* CONTENEDOR PRINCIPAL */
+.minecraft-container {
+    background: rgba(0, 0, 0, 0.8);
+    margin: 30px auto;
+    padding: 25px;
+    width: 90%;
+    border: 4px solid #555;
+    box-shadow: 6px 6px 0px #000;
+}
+
+/* TITULOS */
+.minecraft-title {
+    text-align: center;
+    font-size: 18px;
+    color: #55ff55;
+    text-shadow: 3px 3px #000;
+    margin-bottom: 20px;
+}
+
+/* FORMULARIO */
+.minecraft-form {
+    background: #c6c6c6;
+    border: 4px solid #555;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.minecraft-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #000;
+    color: #0f0;
+    border: 3px solid #555;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+}
+
+/* BOTONES */
+.button {
+    padding: 10px 40px;
+    font-size: 18px;
+    background-color: #008542;
+    color: #fff;
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    display: inline-flex; /* Cambiado a inline-flex para centrar mejor el texto en enlaces */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0;
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: unset;
+    padding: .8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 900;
+    transition: all 0.7s cubic-bezier(0, .8, .26, .99);
+}
+
+    .button::before {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        content: '';
+        transition: .7s cubic-bezier(0, .8, .26, .99);
+        z-index: -1;
+        background-color: #008542 !important;
+        box-shadow: 0 -4px rgb(21 108 0 / 50%) inset, 0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset, 4px 0 rgb(21 108 0 / 50%) inset;
+    }
+
+    .button::after {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        content: '';
+        box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+        transition: .7s cubic-bezier(0, .8, .26, .99);
+    }
+
+    .button:hover::before {
+        box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+    }
+
+    .button:hover::after {
+        box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+    }
+
+    .button:active {
+        transform: translateY(4px);
+    }
+
+        .button:active::after {
+            box-shadow: 0 0 0 0 rgb(0 0 0 / 15%);
+        }
+
+.main-panel {
+    background: rgba(0,0,0,0.75);
+    border: 5px solid #555;
+    width: 80%;
+    margin: 80px auto;
+    padding: 40px;
+    box-shadow: 8px 8px 0px #000;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 12px;
+    color: #ccc;
+    margin-top: 20px;
+}
+
+/* TABLA (LISTA DE MOBS) */
+.minecraft-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .minecraft-table th {
+        background: #3e3e3e;
+        padding: 10px;
+        border: 2px solid #000;
+    }
+
+    .minecraft-table td {
+        background: #7f7f7f;
+        padding: 10px;
+        border: 2px solid #000;
+        color: #000;
+    }
+
+/* BOTONES DE ACCION */
+.btn-edit {
+    background: #ffcc00;
+}
+
+.btn-delete {
+    background: #ff4444;
+    color: #fff;
+}

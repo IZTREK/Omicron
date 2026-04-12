@@ -1,0 +1,88 @@
+﻿@page
+@model Usuarios.Pages.BestiarioModel
+@{
+    ViewData["Title"] = "Bestiario Minecraft";
+}
+<div class="minecraft-container">
+    <h1 class="minecraft-title">Bestiario - Gestión de Mobs</h1>
+
+    <div style="text-align: left; margin-bottom: 20px;">
+        <a href="/" class="mc-btn" style="text-decoration: none; padding: 10px 20px; font-size: 1.1rem; display: inline-block;">
+            ← Volver al Inicio
+        </a>
+    </div>
+
+<div class="minecraft-container">
+
+    <div class="minecraft-panel">
+        <h3>Registrar / Editar Mob</h3>
+        <form method="post">
+            <input type="hidden" asp-for="MobActual.Id" />
+            <div class="form-group">
+                <label>Nombre:</label>
+                <input asp-for="MobActual.Nombre" class="mc-input" required />
+            </div>
+            <div class="form-group">
+                <label>Tipo (Hostil, Pasivo...):</label>
+                <input asp-for="MobActual.Tipo" class="mc-input" required />
+            </div>
+            <div class="form-group">
+                <label>Puntos de Vida:</label>
+                <input type="number" asp-for="MobActual.PuntosVida" class="mc-input" required />
+            </div>
+            <div class="form-group">
+                <label>Daño de Ataque:</label>
+                <input type="number" asp-for="MobActual.DañoAtaque" class="mc-input" required />
+            </div>
+            <div class="form-group">
+                <label>Item que Suelta:</label>
+                <input asp-for="MobActual.ItemSoltado" class="mc-input" required />
+            </div>
+            <div class="form-group">
+                <label>¿Es Domesticable?</label>
+                <input type="checkbox" asp-for="MobActual.EsDomesticable" />
+            </div>
+            <button type="submit" class="mc-btn mt-3">Guardar Mob</button>
+        </form>
+    </div>
+
+    <table class="minecraft-table mt-4">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Vida</th>
+                <th>Daño</th>
+                <th>Drop</th>
+                <th>Domar</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var mob in Model.ListaMobs)
+            {
+                <tr>
+                    <td>@mob.Nombre</td>
+                    <td>@mob.Tipo</td>
+                    <td>@mob.PuntosVida</td>
+                    <td>@mob.DañoAtaque</td>
+                    <td>@mob.ItemSoltado</td>
+                    <td>@(mob.EsDomesticable ? "Sí" : "No")</td>
+
+                    <td style="white-space: nowrap;">
+                        <form method="get" style="display:inline-block; margin-right: 5px;">
+                            <input type="hidden" name="idEditar" value="@mob.Id" />
+                            <button type="submit" class="mc-btn" style="padding: 5px 10px;">Editar</button>
+                        </form>
+
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@mob.Id" style="display:inline-block;">
+                            <button type="submit" class="mc-btn" style="background-color: #aa0000; padding: 5px 10px; color: white;" onclick="return confirm('¿Seguro que deseas eliminar a @mob.Nombre?');">
+                                X
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
