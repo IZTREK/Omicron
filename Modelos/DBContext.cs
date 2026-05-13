@@ -9,6 +9,6 @@ namespace Usuarios.Modelos
         }
 
         // Define un DbSet para la entidad Mob, lo que permite realizar operaciones CRUD sobre la tabla correspondiente en la base de datos
-        public DbSet<Mob> Mobs { get; set; }
+        public DbSet<Producto> Productos { get; set; }
     }
 }
