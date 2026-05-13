@@ -1,171 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* ==========================================
+   ESTILOS CORPORATIVOS - ERP ÓMICRON
+   ========================================== */
+
+/* Variables de color institucionales */
+:root {
+    --primary-color: #0a4275; /* Azul corporativo */
+    --secondary-color: #6c757d; /* Gris texto */
+    --bg-color: #f4f6f9; /* Gris muy claro para el fondo */
+    --card-bg: #ffffff;
+}
 
 body {
-    background: url('https://i.pinimg.com/736x/b5/90/d1/b590d11903d870489f2259b67d56178d.jpg');
-    font-family: 'Press Start 2P', monospace;
-    color: #fff;
+    background-color: var(--bg-color);
+    color: #333;
+    /* Fuente moderna y limpia, adiós a los píxeles */
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
+    padding: 0;
 }
 
-/* NAVBAR */
-.navbar {
-    background: #2d2d2d;
-    border-bottom: 4px solid #1b5e20;
-}
-
-    .navbar a {
-        color: #fff !important;
-        font-size: 12px;
-    }
-    
-/* CONTENEDOR PRINCIPAL */
-.minecraft-container {
-    background: rgba(0, 0, 0, 0.8);
-    margin: 30px auto;
-    padding: 25px;
-    width: 90%;
-    border: 4px solid #555;
-    box-shadow: 6px 6px 0px #000;
-}
-
-/* TITULOS */
-.minecraft-title {
-    text-align: center;
-    font-size: 18px;
-    color: #55ff55;
-    text-shadow: 3px 3px #000;
-    margin-bottom: 20px;
-}
-
-/* FORMULARIO */
-.minecraft-form {
-    background: #c6c6c6;
-    border: 4px solid #555;
-    padding: 15px;
-    margin-bottom: 20px;
-    color: #000;
-}
-
-.minecraft-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: #000;
-    color: #0f0;
-    border: 3px solid #555;
-    font-family: 'Press Start 2P', monospace;
-    font-size: 10px;
-}
-
-/* BOTONES */
-.button {
-    padding: 10px 40px;
-    font-size: 18px;
-    background-color: #008542;
-    color: #fff;
-    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
-    display: inline-flex; /* Cambiado a inline-flex para centrar mejor el texto en enlaces */
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    border: 0;
-    z-index: 1;
-    user-select: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    white-space: unset;
-    padding: .8rem 1.5rem;
-    text-decoration: none;
-    font-weight: 900;
-    transition: all 0.7s cubic-bezier(0, .8, .26, .99);
-}
-
-    .button::before {
-        position: absolute;
-        pointer-events: none;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        content: '';
-        transition: .7s cubic-bezier(0, .8, .26, .99);
-        z-index: -1;
-        background-color: #008542 !important;
-        box-shadow: 0 -4px rgb(21 108 0 / 50%) inset, 0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset, 4px 0 rgb(21 108 0 / 50%) inset;
-    }
-
-    .button::after {
-        position: absolute;
-        pointer-events: none;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        content: '';
-        box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
-        transition: .7s cubic-bezier(0, .8, .26, .99);
-    }
-
-    .button:hover::before {
-        box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
-    }
-
-    .button:hover::after {
-        box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
-    }
-
-    .button:active {
-        transform: translateY(4px);
-    }
-
-        .button:active::after {
-            box-shadow: 0 0 0 0 rgb(0 0 0 / 15%);
-        }
-
+/* Contenedor principal estilo Tarjeta (reemplaza al panel negro semitransparente) */
 .main-panel {
-    background: rgba(0,0,0,0.75);
-    border: 5px solid #555;
-    width: 80%;
-    margin: 80px auto;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     padding: 40px;
-    box-shadow: 8px 8px 0px #000;
-    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+    border-top: 5px solid var(--primary-color); /* Detalle azul superior */
+}
+
+/* Títulos limpios (reemplaza al texto verde fosforescente) */
+.minecraft-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    text-transform: none;
+    text-shadow: none;
+    letter-spacing: normal;
 }
 
 .subtitle {
-    font-size: 12px;
-    color: #ccc;
-    margin-top: 20px;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
 }
 
-/* TABLA (LISTA DE MOBS) */
-.minecraft-table {
-    width: 100%;
-    border-collapse: collapse;
+/* Botones corporativos modernos (reemplaza a los botones 3D verdes) */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff !important;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(10, 66, 117, 0.2);
 }
 
-    .minecraft-table th {
-        background: #3e3e3e;
-        padding: 10px;
-        border: 2px solid #000;
+    .button:hover {
+        background-color: #072f54; /* Azul más oscuro al pasar el mouse */
+        color: #ffffff;
+        transform: translateY(-2px); /* Ligero efecto de elevación */
+        box-shadow: 0 4px 10px rgba(10, 66, 117, 0.3);
     }
 
-    .minecraft-table td {
-        background: #7f7f7f;
-        padding: 10px;
-        border: 2px solid #000;
-        color: #000;
+    .button:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 5px rgba(10, 66, 117, 0.2);
     }
 
-/* BOTONES DE ACCION */
-.btn-edit {
-    background: #ffcc00;
+/* Ajustes para que la tabla de Bootstrap se vea impecable */
+.table-hover tbody tr:hover {
+    background-color: rgba(10, 66, 117, 0.05);
 }
 
-.btn-delete {
-    background: #ff4444;
-    color: #fff;
+.badge {
+    font-weight: 500;
+    padding: 0.5em 0.8em;
 }
